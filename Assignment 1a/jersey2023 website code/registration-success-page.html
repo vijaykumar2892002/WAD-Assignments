@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Success</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #84bbf9;
+    }
+    .container {
+      max-width: 80%;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: rgb(137, 220, 231);
+    }
+    h2 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Data List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody id="dataListBody">
+        <!-- Data will be dynamically added here -->
+      </tbody>
+    </table>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Retrieve data from local storage
+    var formDataArray = JSON.parse(localStorage.getItem('formDataArray'));
+
+    // Display data in table
+    var dataListBody = document.getElementById("dataListBody");
+    if (formDataArray && formDataArray.length > 0) {
+      formDataArray.forEach(function(data) {
+        var row = "<tr><td>" + data.name + "</td><td>" + data.email + "</td><td>" + data.password + "</td></tr>";
+        dataListBody.innerHTML += row;
+      });
+    } else {
+      dataListBody.innerHTML = "<tr><td colspan='3'>No data available</td></tr>";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+h1,h2,h3{
+    font-family: "Montserrat", sans-serif;
+}
+
+/*Navbar -section*/
+.nav-item {
+  padding: 0px 18px;
+}
+.navbar-brand {
+  font-family: "Ubuntu";
+}
+.navbar-toggler-icon {
+  margin-right: 3rem;
+  background-color: white;
+  width: 60%;
+}
+.drop-button {
+  background-color: #87cefa;
+}
+.nav-icons {
+  color: #4169e1;
+  margin-bottom: 1rem;
+}
+
+.nav-icons:hover {
+  color: #ff4c68;
+}
+
+
+
+/*Heading part */
+
+#Content {
+  padding-top: 7rem;
+  padding-left: 5rem;
+  background-color: #ff4c68;
+}
+.heading-part{
+  font-size: 3rem;
+  line-height: 1.5;
+  color: #fff;
+}
+.Heading-image {
+  padding-top: 4rem;
+  height: 32rem;
+}
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+/*feature-part*/
+
+#features {
+  padding: 7% 15%;
+}
+
+.feature-row {
+  padding: 12% 5%;
+}
+
+.feature-box {
+  text-align: center;
+  padding: 0% 10%;
+}
+
+.feature-text{
+  padding: 0% 10%;
+  color: #8f8f8f;
+}
+
+.icon {
+  color: #ef8172;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #ff4c68;
+}
+
+/*Slide-part*/
+
+#testimonials {
+  padding: 0% 27%;
+  text-align: center;
+  background-color: #e0ffff;
+  width: 101%;
+}
+.testimonials-text {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: #434242;
+}
+
+.rate {
+  font-size: 3.5rem;
+}
+
+.slide-img {
+  background-color: #e0ffff;
+  width: 50%;
+}
+
+/*prcing*/
+.main-div{
+  margin-top: 2rem;
+  padding: 1% 5%;
+}
+.buy {
+  padding: 0.5rem 3.4rem;
+}
+#image-price{
+  width: 60%;
+}
+.card{
+  padding-left: 5rem;
+  margin-right: 1%;
+  width: 30%;
+  
+}
+.row{
+
+}
+
+
+/*Download*/
+
+#cta {
+  padding: 7% 15%;
+  text-align: center;
+}
+
+.cta-div {
+  background-color: #ff4c68;
+}
+
+.cta-txt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/*footer part*/
+
+#footer {
+  padding: 5% 15%;
+  text-align: center;
+}
+
+.footer-icon {
+  padding: 1rem;
+}
+/* Media-part*/
+
+@media (max-width:950px) {
+  h1 {
+    text-align: center;
+  }
+
+
+}
+/* col-lg-4 col-md-12 col-sm-12*/

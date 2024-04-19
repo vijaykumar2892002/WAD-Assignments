@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #84bbf9;
+    }
+    .container {
+      max-width: 35%;
+      margin-top: 3%;
+      padding: 4%;
+      background-color: rgb(137, 220, 231);
+    }
+    .error-message {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center mb-4">Register</h2>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="name">Full Name <span>*</span></label>
+        <input required type="text" class="form-control" id="name" placeholder="Enter your full name">
+        <div class="error-message" id="errorMessageName" style="display: none;"></div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email address <span>*</span></label>
+        <input required type="email" class="form-control" id="email" placeholder="Enter email">
+        <div class="error-message" id="errorMessageEmail" style="display: none;"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password <span>*</span></label>
+        <input required type="password" class="form-control" id="password" placeholder="Password">
+        <div class="error-message" id="errorMessagePassword" style="display: none;"></div>
+      </div>
+      <button type="button" class="btn btn-primary btn-block" onclick="register()">Register</button>
+    </form>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    var formDataArray = []; // Array to store form data in client-side
+
+    function register() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var errorMessageName = document.getElementById("errorMessageName");
+      var errorMessageEmail = document.getElementById("errorMessageEmail");
+      var errorMessagePassword = document.getElementById("errorMessagePassword");
+
+      // Clear previous error messages
+      errorMessageName.style.display = "none";
+      errorMessageName.innerText = "";
+      errorMessageEmail.style.display = "none";
+      errorMessageEmail.innerText = "";
+      errorMessagePassword.style.display = "none";
+      errorMessagePassword.innerText = "";
+
+      // Simple validation
+      if (name.trim() === "") {
+        errorMessageName.innerText = "Please enter name.";
+        errorMessageName.style.display = "block";
+        return;
+      }
+      if (email.trim() === "") {
+        errorMessageEmail.innerText = "Please enter email.";
+        errorMessageEmail.style.display = "block";
+        return;
+      }
+      if (!email.includes("@")) {
+        errorMessageEmail.innerText = "Please enter a valid email address.";
+        errorMessageEmail.style.display = "block";
+        return;
+      }
+      if (password.trim() === "") {
+        errorMessagePassword.innerText = "Please enter password.";
+        errorMessagePassword.style.display = "block";
+        return;
+      }
+      if (password.length < 5) {
+        errorMessagePassword.innerText = "Password must be at least 5 characters long.";
+        errorMessagePassword.style.display = "block";
+        return;
+      }
+
+      // Store form data in an object
+      var formData = {
+        name: name,
+        email: email,
+        password: password
+      };
+
+      // Push the form data object into the array
+      formDataArray.push(formData);
+      console.log(formData);
+
+      // Store data in local storage
+      localStorage.setItem('formDataArray', JSON.stringify(formDataArray));
+
+      // Redirect to new page
+      window.location.href = "registration-success-page.html";
+    }
+  </script>
+</body>
+</html>
